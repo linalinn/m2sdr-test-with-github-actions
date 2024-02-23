@@ -12,11 +12,11 @@ jobs:
 
       - name: Run pcbdraw render front
         continue-on-error: true
-        run: pcbdraw render m2sdr.kicad_pcb front.png --side front
+        run: pcbdraw render m2sdr.kicad_pcb front.png --side front || exit 0
 
       - name: Run pcbdraw render back
         continue-on-error: true
-        run: pcbdraw render m2sdr.kicad_pcb back.png --side back
+        run: pcbdraw render m2sdr.kicad_pcb back.png --side back || exit 0
 
       - name: Setup Pages
         continue-on-error: true
