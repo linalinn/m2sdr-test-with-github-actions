@@ -5,7 +5,7 @@ jobs:
   render-images:
     name: Test
     runs-on: ubuntu-latest
-    container: linalinn/pcbdraw
+    container: linalinn/pcbdraw:withconfig
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
