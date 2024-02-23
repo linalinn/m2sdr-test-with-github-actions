@@ -7,6 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     container: linalinn/pcbdraw
     steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+
       - name: Run pcbdraw render front
         run: pcbdraw render m2sdr.kicad_pcb front.png --side front
 
