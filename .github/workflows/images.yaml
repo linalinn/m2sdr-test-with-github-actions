@@ -5,7 +5,7 @@ jobs:
   render-images:
     name: render-images
     runs-on: ubuntu-latest
-    container: linalinn/pcbdraw:withconfig
+    container: linalinn/pcbdraw:newclipara
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
