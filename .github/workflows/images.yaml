@@ -10,11 +10,14 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
 
+      - name: make image directory
+        run: mkdir $GITHUB_WORKSPACE/images
+
       - name: Run pcbdraw render front
-        run: pcbdraw render m2sdr.kicad_pcb front.png --side front --debug-path "$GITHUB_WORKSPACE" || true
+        run: pcbdraw render m2sdr.kicad_pcb front.png --side front
 
       - name: Run pcbdraw render back
-        run: pcbdraw render m2sdr.kicad_pcb back.png --side back --debug-path "$GITHUB_WORKSPACE" || true
+        run: pcbdraw render m2sdr.kicad_pcb back.png --side back
 
       - name: Setup Pages
         if: github.ref == 'refs/heads/master'
@@ -24,7 +27,7 @@ jobs:
         if: github.ref == 'refs/heads/master'
         uses: actions/upload-pages-artifact@v1
         with:
-          path: "."
+          path: "images"
 
   deploy-pages:
     if: github.ref == 'refs/heads/master'
