@@ -11,12 +11,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run pcbdraw render front
-        continue-on-error: true
-        run: pcbdraw render m2sdr.kicad_pcb front.png --side front
+        run: pcbdraw render m2sdr.kicad_pcb front.png --side front --debug-path "$GITHUB_WORKSPACE" || true
 
       - name: Run pcbdraw render back
-        continue-on-error: true
-        run: pcbdraw render m2sdr.kicad_pcb back.png --side back
+        run: pcbdraw render m2sdr.kicad_pcb back.png --side back --debug-path "$GITHUB_WORKSPACE" || true
 
       - name: Setup Pages
         if: github.ref == 'refs/heads/master'
