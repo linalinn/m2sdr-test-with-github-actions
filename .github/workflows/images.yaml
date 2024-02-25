@@ -14,10 +14,10 @@ jobs:
         run: mkdir $GITHUB_WORKSPACE/images
 
       - name: Run pcbdraw render front
-        run: pcbdraw render m2sdr.kicad_pcb front.png --side front
+        run: pcbdraw render m2sdr.kicad_pcb images/front.png --side front
 
       - name: Run pcbdraw render back
-        run: pcbdraw render m2sdr.kicad_pcb back.png --side back
+        run: pcbdraw render m2sdr.kicad_pcb images/back.png --side back
 
       - name: Setup Pages
         if: github.ref == 'refs/heads/master'
