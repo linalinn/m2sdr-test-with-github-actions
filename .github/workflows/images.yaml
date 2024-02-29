@@ -5,7 +5,7 @@ jobs:
   render-images:
     name: render-images
     runs-on: ubuntu-latest
-    container: linalinn/pcbdraw:newclipara
+    container: linalinn/pcbdraw:kicad7
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
@@ -14,10 +14,10 @@ jobs:
         run: mkdir $GITHUB_WORKSPACE/images
 
       - name: Run pcbdraw render front
-        run: pcbdraw render m2sdr.kicad_pcb images/front.png --side front --timeout-by-factor 4
+        run: pcbdraw render m2sdr.kicad_pcb images/front.png --side front --timeout-by-factor 4 --debug-print
 
       - name: Run pcbdraw render back
-        run: pcbdraw render m2sdr.kicad_pcb images/back.png --side back --timeout-by-factor 4
+        run: pcbdraw render m2sdr.kicad_pcb images/back.png --side back --timeout-by-factor 4 --debug-print
 
       - name: Setup Pages
         if: github.ref == 'refs/heads/master'
