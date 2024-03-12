@@ -10,17 +10,13 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
 
-      - name: make image directory
-        run: mkdir $GITHUB_WORKSPACE/images && mkdir $GITHUB_WORKSPACE/images/front $GITHUB_WORKSPACE/images/back
-
-      - name: Run pcbdraw render front
-        continue-on-error: true
-        run: pcbdraw render m2sdr.kicad_pcb images/front.png --side front --timeout-by-factor 4 --debug-print --debug-path $GITHUB_WORKSPACE/images/front
-
-      - name: Run pcbdraw render back
-        continue-on-error: true
-        run: pcbdraw render m2sdr.kicad_pcb images/back.png --side back --timeout-by-factor 4 --debug-print --debug-path $GITHUB_WORKSPACE/images/back
-
+      - name: render pcb images
+        uses: linalinn/kicad-render@main
+        with:
+          pcb_file: m2sdr.kicad_pcb
+          output_path: $GITHUB_WORKSPACE/images
+          animation: gif
+          
       - name: Setup Pages
         if: github.ref == 'refs/heads/master'
         uses: actions/configure-pages@v3
