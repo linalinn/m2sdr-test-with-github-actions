@@ -5,7 +5,6 @@ jobs:
   render-images:
     name: render-images
     runs-on: ubuntu-latest
-    container: linalinn/pcbdraw:kicad7
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
@@ -14,7 +13,7 @@ jobs:
         uses: linalinn/kicad-render@main
         with:
           pcb_file: m2sdr.kicad_pcb
-          output_path: $GITHUB_WORKSPACE/images
+          output_path: ${{ github.workspace }}/images
           animation: gif
           
       - name: Setup Pages
