@@ -14,7 +14,7 @@ jobs:
         with:
           pcb_file: m2sdr.kicad_pcb
           output_path: ${{ github.workspace }}/images
-          animation: gif
+          animation: mp4
           
       - name: Setup Pages
         if: github.ref == 'refs/heads/master'
