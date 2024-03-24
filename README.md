@@ -6,7 +6,8 @@
 ![pcb-back](https://linalinn.github.io/m2sdr/bottom.png)
 
 ### rotated markdown
-![rotate](https://linalinn.github.io/m2sdr/rotating.gif)
+![rotate](https://linalinn.github.io/m2sdr/rotating.mp4)
 
 ### rotated html
 <img src="https://linalinn.github.io/m2sdr/rotating.gif" width="40" height="40" />
+<video src="https://linalinn.github.io/m2sdr/rotating.mp4" width="40" height="40" />
