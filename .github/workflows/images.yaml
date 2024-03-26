@@ -15,6 +15,13 @@ jobs:
           pcb_file: m2sdr.kicad_pcb
           output_path: ${{ github.workspace }}/images
           animation: mp4
+
+      - name: render pcb images path with spaces
+        uses: linalinn/kicad-render@main
+        with:
+          pcb_file: path with space in folder name/m2sdr.kicad_pcb
+          output_path: ${{ github.workspace }}/images/spaces
+          animation: mp4
           
       - name: Setup Pages
         if: github.ref == 'refs/heads/master'
